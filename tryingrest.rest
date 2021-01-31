@@ -1,0 +1,43 @@
+POST http://localhost:5000/admin/add-definition
+Content-Type: application/json
+
+{
+    "name":"matias"
+}
+
+###
+
+GET http://localhost:5000/
+
+
+###
+
+GET http://localhost:5000/search/loa
+
+###
+GET http://localhost:5000/searchall
+
+
+###
+
+POST http://localhost:5000/adminarea/registerAdmin HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"m@m.de",
+    "password":"mama"
+}
+
+###
+
+GET http://localhost:5000/adminarea/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email":"m@m.de",
+    "password":"mama"
+}
+
+###
+
+GET http://localhost:5000/search/Tango HTTP/1.1

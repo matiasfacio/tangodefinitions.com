@@ -1,0 +1,237 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4rem;
+  color: white;
+}
+
+h3 {
+  color: white;
+  font-size: 1.7rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+a:hover {
+  color: chocolate;
+}
+
+.btn-logout {
+  color: white;
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  border: 3px chocolate solid;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color: chocolate;
+  outline: none;
+}
+
+.btn-logout:hover {
+  border-color: white;
+}
+
+nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 350px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav a {
+  font-size: 1.2rem;
+}
+
+nav ul {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul a {
+  background-color: chocolate;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 2px chocolate solid;
+}
+
+nav ul a:hover {
+  border-color: white;
+  color: white;
+}
+
+.title {
+  padding: 20px;
+}
+
+form {
+  margin: 20px;
+}
+
+form label {
+  color: white;
+  font-size: 1.3rem;
+  margin-right: 20px;
+  padding: 10px 0;
+}
+
+form button {
+  color: white;
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  border: 3px chocolate solid;
+  border-radius: 10px;
+  margin-left: 20px;
+  background-color: chocolate;
+  outline: none;
+}
+
+form button:hover {
+  border-color: white;
+}
+
+form input {
+  max-width: 600px;
+  font-size: 1.3rem;
+  padding: 6px 15px;
+  margin: 10px 0px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+form input::-webkit-input-placeholder {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+form input:-ms-input-placeholder {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+form input::-ms-input-placeholder {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+form input::placeholder {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+form textarea {
+  width: clamp(350px, 30vw, 500px);
+  height: clamp(400px, 50vh, 500px);
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0px;
+  font-size: 1.3rem;
+  padding: 6px 15px;
+  outline: none;
+}
+
+form .form_left,
+form .form_right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 20px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.SectionContainer {
+  width: 100vw;
+  padding: 80px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.display_all_defintions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100vw;
+  height: 200px;
+  padding: 20px;
+  border-bottom: 1px white solid;
+}
+
+table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+table tbody {
+  background-color: white;
+  color: black;
+}
+
+table tbody .ResultsContainerTR {
+  margin: 20px;
+}
+
+table tbody tr {
+  border-radius: 10px;
+}
+
+table tbody td {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+table tbody .ResultsContainerTD {
+  max-width: 30vw;
+  min-width: 350px;
+}
+/*# sourceMappingURL=main.css.map */
