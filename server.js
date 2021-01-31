@@ -34,9 +34,9 @@ if (dev === "production") {
   app.use(morgan("common"));
   app.use(express.static(path.join(__dirname, "tango-def", "build")));
   console.log("production mode active:", dev);
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "tango-def", "build", "index.html"));
-  });
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "tango-def", "build", "index.html"));
+  // });
 }
 
 if (dev !== "production") {
@@ -91,9 +91,11 @@ app.get("/search/:entry", (req, res) => {
     (error, quest) => {
       if (error) {
         console.log(error);
+        return res.send('nothing founded') //added this
       }
       console.log(quest);
-      res.send(quest);
+      const questParsed = JSON.stringify(quest)
+      res.send(questParsed);
     }
   );
 });
