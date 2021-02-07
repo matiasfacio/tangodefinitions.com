@@ -21,7 +21,7 @@ const AdminContextProvider = (props) => {
 
   useEffect(() => {
    
-    fetch("/searchall")
+    fetch("/search/searchall")
       .then((response) => response.json())
       .then((data) => dispatch({ type: "INIT", payload: data }))
       .catch((err) => console.log(err));
@@ -50,6 +50,7 @@ const AdminContextProvider = (props) => {
     })
       .then(() => loadFromSever())
       .catch((err) => console.log(err));
+
   };
 
   const tryToLogin = (accessData) => {
