@@ -5,7 +5,7 @@ export const SearchContext = createContext()
 const SearchContextProvider = (props) => {
 
     const searchEntry = (entry) => {
-        fetch(`http://localhost:5000/search/${entry}`)
+        fetch(`/search/${entry}`)
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(err => console.log(err))

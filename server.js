@@ -16,6 +16,7 @@ const dev = app.get("env");
 // adding routes
 const adminroutes = require("./routes/admin.js");
 const guestroutes = require("./routes/guestuser.js");
+const searchroutes = require("./routes/search.js");
 
 // middlewares
 
@@ -48,6 +49,7 @@ if (dev !== "production") {
 
 app.use("/adminarea", adminroutes);
 app.use("/guest", guestroutes);
+app.use("/search", searchroutes)
 
 // connect to database
 
@@ -61,44 +63,6 @@ mongoose
   )
   .catch((err) => console.log(err));
 
-// routes
-
-app.get("/", (req, res) => {
-  res.send("<h1>MongoDB</h1>");
-});
-
-app.get("/searchall", (req, res) => {
-  console.log("search all");
-  Entry.find()
-    .sort({ createdAt: -1 })
-    .then((response) => JSON.stringify(response))
-    .then((response) =>
-      response.length ? res.status(200).send(response) : res.send("nothing yet")
-    )
-    .catch((err) => console.log(err));
-});
-
-app.get("/search/:entry", (req, res) => {
-  const entry = req.params.entry;
-  console.log(entry);
-  Entry.find(
-    {
-      $or: [
-        { definition: { $regex: entry, $options: "i" } },
-        { title: { $regex: entry, $options: "i" } },
-      ],
-    },
-    (error, quest) => {
-      if (error) {
-        console.log(error);
-        return res.send('nothing founded') //added this
-      }
-      console.log(quest);
-      const questParsed = JSON.stringify(quest)
-      res.send(questParsed);
-    }
-  );
-});
 
 app.use((req, res) => {
   res.status(404).render("404", { title: "404" });

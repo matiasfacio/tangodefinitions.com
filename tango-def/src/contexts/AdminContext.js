@@ -30,7 +30,7 @@ const AdminContextProvider = (props) => {
   useEffect(() => {}, [definitions]);
 
   const loadFromSever = () => {
-    fetch("/searchall")
+    fetch("/search/searchall")
       .then((response) => response.json())
       .then((data) => dispatch({ type: "INIT", payload: data }))
       .catch((err) => console.log(err));
