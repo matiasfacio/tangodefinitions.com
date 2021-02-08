@@ -8,8 +8,6 @@ const useSearch = () => {
       .then((response) => response.json())
       .then((data) => setSearchResult(data))
       .catch((err) => console.log(err));
-
-    console.log("this search over here:", searchResult);
   };
 
   return [searchResult, startSearch];
