@@ -35,9 +35,6 @@ if (dev === "production") {
   app.use(morgan("common"));
   app.use(express.static(path.join(__dirname, "tango-def", "build")));
   console.log("production mode active:", dev);
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "tango-def", "build", "index.html"));
-  // });
 }
 
 if (dev !== "production") {
@@ -49,21 +46,26 @@ if (dev !== "production") {
 
 app.use("/adminarea", adminroutes);
 app.use("/guest", guestroutes);
-app.use("/search", searchroutes)
+app.use("/search", searchroutes);
 
 // connect to database
 
 mongoose
   .connect(DB_KEY_TBC, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then((result) =>
+  .then((result) => {
     app.listen(PORT, () => {
       console.log(`listening at port ${PORT}`);
       console.log("connected to mongoDB");
-    })
-  )
+    });
+  })
   .catch((err) => console.log(err));
-
 
 app.use((req, res) => {
   res.status(404).render("404", { title: "404" });
 });
+
+if (dev === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "tango-def", "build", "index.html"));
+  });
+}

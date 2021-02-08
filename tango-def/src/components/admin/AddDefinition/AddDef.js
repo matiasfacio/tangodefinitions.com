@@ -10,6 +10,7 @@ const AddDef = () => {
     snippet: "",
     definition: "",
     video_link: "",
+    language: ""
   });
   const firstInputRef = useRef();
 
@@ -28,6 +29,7 @@ const AddDef = () => {
               snippet: "",
               definition: "",
               video_link: "",
+              language: ""
             });
             firstInputRef.current.focus();
           }}
@@ -49,6 +51,15 @@ const AddDef = () => {
                 setNewDef({ ...newdef, snippet: e.target.value })
               }
             />
+            <label>Language</label>
+            <input 
+              id = "language"
+              type="text"
+              value = {newdef.language}
+              onChange = {(e => {
+                setNewDef({...newdef, language: e.target.value})
+              })}
+              />
             <label>Video Link</label>
             <input
               id="video"

@@ -13,7 +13,7 @@ const Search = () => {
   }, []);
 
   useEffect(() => {
-    console.log(searchResult);
+    
   }, [searchResult]);
 
   return (

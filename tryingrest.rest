@@ -18,7 +18,7 @@ GET http://localhost:5000/search/loa
 GET http://localhost:5000/search/searchall
 
 ###
-GET http://localhost:5000/searchall
+GET http://localhost:5000/search/searchall
 
 
 ###
@@ -48,4 +48,8 @@ GET http://localhost:5000/search/Tango HTTP/1.1
 ###
 
 GET http://localhost:5000/search/ocho HTTP/1.1
+
+###
+
+DELETE http://localhost:5000/adminarea/delete/
 

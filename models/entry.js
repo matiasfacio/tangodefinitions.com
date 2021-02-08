@@ -17,6 +17,10 @@ const entrySchema = new Schema({
     video_link: {
         type: String,
         required: false
+    },
+    language: {
+        type: String,
+        require: false
     }
 }, { timestamps: true});
 
