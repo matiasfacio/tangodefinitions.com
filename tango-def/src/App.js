@@ -25,7 +25,7 @@ function App() {
 export default App;
 
 const Main = styled.div`
-  width: 100vw;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;

@@ -68,7 +68,7 @@ const Search = () => {
             })}
           </tbody>
         </table>
-      ): <div style = {{textAlign:"center"}}>no entry</div>}
+      ): <div style = {{textAlign:"center"}}>entry your search</div>}
     </section>
   );
 };

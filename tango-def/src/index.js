@@ -9,6 +9,8 @@ import AdminContextProvider from "./contexts/AdminContext";
 
 const GlobalStyle = createGlobalStyle`
   body {
+    width: 100%;
+    overflow-x: hidden;
     background-color: teal;
     padding: 0px 2em;
     color: white;
