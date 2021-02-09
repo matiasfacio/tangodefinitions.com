@@ -15,7 +15,7 @@ const Definitions = memo(() => {
               <div>{def._id}</div>
               <div>{def.title}</div>
               <div>{def.snippet}</div>
-              <div>{def.definition}</div>
+              <div className = "one_definition">{def.definition}</div>
               <div>{def.vide_link}</div>
               <button onClick = { ()=> delDefinitionDB(def._id)}>Del</button>
             </div>

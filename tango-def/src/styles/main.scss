@@ -142,6 +142,9 @@ form {
   height: 200px;
   padding: 20px;
   border-bottom: 1px white solid;
+  .one_definition {
+    white-space: pre-wrap;
+  }
 }
 
 table {
@@ -162,12 +165,11 @@ table {
       padding: 10px;
       border-radius: 10px;
     }
-  
+
     .ResultsContainerTD {
       max-width: 30vw;
       min-width: 350px;
+      white-space: pre-wrap;
     }
   }
 }
-
-

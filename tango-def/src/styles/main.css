@@ -207,6 +207,10 @@ form .form_right {
   border-bottom: 1px white solid;
 }
 
+.display_all_defintions .one_definition {
+  white-space: pre-wrap;
+}
+
 table {
   width: 80%;
   margin: 0 auto;
@@ -233,5 +237,6 @@ table tbody td {
 table tbody .ResultsContainerTD {
   max-width: 30vw;
   min-width: 350px;
+  white-space: pre-wrap;
 }
 /*# sourceMappingURL=main.css.map */
