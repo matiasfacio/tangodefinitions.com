@@ -150,8 +150,10 @@ form {
 }
 
 table {
-  width: calc(100% - 2em);
-  margin: 0 auto;
+  width: clamp(280px,80%, 1200px);
+  padding: 0vw;
+  // width: calc(100% - 2em);
+  margin: 50px auto;
   tbody {
     background-color: white;
     color: black;
