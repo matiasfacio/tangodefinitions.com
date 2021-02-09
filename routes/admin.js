@@ -70,10 +70,10 @@ routes.post("/add-definition", async (req, res) => {
   });
 
   try {
-    const response = await newEntry.save()
-    res.status(200).send(response.body)
+    const response = await newEntry.save();
+    res.status(200).end();
   } catch (error) {
-    res.status(500).send('there was a problem, the entry couldn not be store')
+    res.status(500).send("there was a problem, the entry couldn not be store");
   }
 });
 

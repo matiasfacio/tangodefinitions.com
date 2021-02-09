@@ -28,26 +28,41 @@ const AdminContextProvider = (props) => {
 
   useEffect(() => {}, [definitions]);
 
-  const loadFromSever = () => {
-    fetch("/search/searchall")
-      .then((response) => response.json())
-      .then((data) => dispatch({ type: "INIT", payload: data }))
-      .catch((err) => console.log(err));
+
+  const loadFromSever = async () => {
+    try {
+      const result = await fetch("search/searchall");
+
+      if (!result.ok) {
+        throw new Error("error fetching data");
+      }
+      const data = await result.json();
+      dispatch({ type: "INIT", payload: data });
+    } catch (error) {
+      alert(error);
+    }
   };
 
-  const addDefinitionDB = (newDefinition) => {
-    const parseDef = JSON.stringify(newDefinition);
-    fetch("/adminarea/add-definition", {
-      mode: "cors",
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: parseDef,
-    })
-      .then(() => loadFromSever())
-      .catch((err) => console.log(err));
+
+  const addDefinitionDB = async (newDefinition) => {
+    try {
+      const parseDef = JSON.stringify(newDefinition);
+      const result = await fetch("/adminarea/add-definition", {
+        mode: "cors",
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: parseDef,
+      });
+      if (result.status !== 200) {
+        throw new Error("sorry, error fetching data");
+      }
+      loadFromSever();
+    } catch (error) {
+      alert(error);
+    }
   };
 
   const delDefinitionDB = async (id) => {
@@ -59,26 +74,35 @@ const AdminContextProvider = (props) => {
       if (result.status !== 200) {
         throw new Error(result.status);
       } else {
-        loadFromSever()
+        loadFromSever();
       }
     } catch (err) {
       alert(err);
     }
   };
 
-  const tryToLogin = (accessData) => {
-    const parsedAccessData = JSON.stringify(accessData);
-    fetch("/adminarea/login", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: parsedAccessData,
-    })
-      .then((response) => setAdminLogin(response.status === 200 ? true : false))
-      .catch((err) => console.log(err));
+
+  const tryToLogin = async (accessData) => {
+    try {
+      const parsedAccessData = JSON.stringify(accessData);
+      const result = await fetch("/adminarea/login", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: parsedAccessData,
+      });
+      if (result.status === 200) {
+        setAdminLogin(true);
+      } else {
+        setAdminLogin(false);
+        throw new Error("check your credentials");
+      }
+    } catch (error) {
+      alert(error);
+    }
   };
 
   const adminLogout = () => {

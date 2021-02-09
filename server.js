@@ -38,6 +38,7 @@ if (dev === "production") {
 }
 
 if (dev !== "production") {
+  app.disable("x-powered-by");
   app.use(morgan("dev"));
   console.log("mode", dev);
 }
