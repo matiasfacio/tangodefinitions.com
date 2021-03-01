@@ -77,6 +77,17 @@ routes.post("/add-definition", async (req, res) => {
   }
 });
 
+routes.put("/edit", async (req, res) => {
+  console.log(req.body);
+  try {
+    const result = await Entry.replaceOne({ _id: req.body._id }, req.body);
+    res.status(200).end()
+  } catch (err) {
+    console.log(err);
+    res.status(400).end()
+  }
+});
+
 routes.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
   console.log(id);
