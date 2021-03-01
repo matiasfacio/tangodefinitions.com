@@ -81,6 +81,26 @@ const AdminContextProvider = (props) => {
     }
   };
 
+  const editDefinitionDB = async (modifiedDefinition) => {
+    const modifiedDefinitionJson = JSON.stringify(modifiedDefinition)
+    try {
+      const result = await fetch('/adminarea/edit', {
+        method: 'PUT',
+        headers: { 
+          'Content-type': 'application/json'
+        },
+        body: modifiedDefinitionJson
+      })
+      if (result.status !== 200) {
+        throw new Error(result.status)
+      } else {
+        loadFromSever();
+      }
+    } catch (err) {
+        alert(err)  
+    }
+  }
+
 
   const tryToLogin = async (accessData) => {
     try {
@@ -116,6 +136,7 @@ const AdminContextProvider = (props) => {
         definitions,
         addDefinitionDB,
         delDefinitionDB,
+        editDefinitionDB,
         tryToLogin,
         isLoggedin,
         adminLogout,

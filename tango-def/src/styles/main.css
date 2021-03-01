@@ -203,13 +203,14 @@ form .form_right {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 100vw;
-  height: 200px;
+  min-height: 200px;
   padding: 20px;
   border-bottom: 1px white solid;
 }
 
 .display_all_defintions .one_definition {
   white-space: pre-wrap;
+  max-width: 600px;
 }
 
 table {
